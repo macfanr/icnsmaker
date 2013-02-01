@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'IconFactoryCLI' target in the 'IconFactoryCLI' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
