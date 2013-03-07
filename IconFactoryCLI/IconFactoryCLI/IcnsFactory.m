@@ -43,11 +43,15 @@ UInt32 flipUInt32(UInt32 littleEndian){
     }];
     
     NSMutableData *headerData = [NSMutableData data];
+    
     UInt32 fileLength = flipUInt32(16 + (UInt32)bodyLength);
+
     [headerData appendData:[self dataForOSType:kIconFamilyType]];
     [headerData appendBytes:&fileLength length:4];
+    
     [handle writeData:headerData];
     [handle writeData:bodyData];
+    
     [handle closeFile];
     return YES;
 }
@@ -65,7 +69,7 @@ UInt32 flipUInt32(UInt32 littleEndian){
 
 + (NSData *)dataForOSType:(OSType)OSType{
     CFStringRef cfstring = UTCreateStringForOSType(OSType);
-    NSString *string = [NSString stringWithString:(__bridge NSString *)cfstring];
+    NSString *string = [NSString stringWithString:(NSString *)cfstring];
     CFRelease(cfstring);
     return [string dataUsingEncoding:NSASCIIStringEncoding];
 }
@@ -77,7 +81,7 @@ UInt32 flipUInt32(UInt32 littleEndian){
     if(pixelsWide != pixelsHigh){
         return 0;
     }
-    
+        
     if(pixelsWide == 1024 || pixelsWide == 512 || pixelsWide == 256 ||
        pixelsWide == 128 || pixelsWide == 48 || pixelsWide == 32 || pixelsWide == 16){
         NSData *imageData = [bitmap representationUsingType:NSPNGFileType properties:nil];
@@ -88,7 +92,22 @@ UInt32 flipUInt32(UInt32 littleEndian){
             [bodyData appendData:[self dataForOSType:kIconServices512PixelDataARGB]];
         }else if(pixelsWide == 256){
             [bodyData appendData:[self dataForOSType:kIconServices256PixelDataARGB]];
-        }else{ // This works, though these sizes are suppose to be broken out in to RGB(32bit) and A(8bit)
+        }
+        
+//        else if(pixelsWide == 128){
+//            [bodyData appendData:[self dataForOSType:kIconServices128PixelDataARGB]];
+//        }
+//        else if(pixelsWide == 48){
+//            [bodyData appendData:[self dataForOSType:kIconServices48PixelDataARGB]];
+//        }
+//        else if(pixelsWide == 32){
+//            [bodyData appendData:[self dataForOSType:kIconServices32PixelDataARGB]];
+//        }
+//        else if(pixelsWide == 16){
+//            [bodyData appendData:[self dataForOSType:kIconServices16PixelDataARGB]];
+//        }
+        
+        else{ // This works, though these sizes are suppose to be broken out in to RGB(32bit) and A(8bit)
             [bodyData appendData:[self dataForOSType:kThumbnail32BitData]];
         }
         [bodyData appendBytes:&length length:4];

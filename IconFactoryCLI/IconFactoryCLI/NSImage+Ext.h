@@ -10,4 +10,5 @@
 
 @interface NSImage (Resize)
 - (NSImage*)resize:(NSSize)destSize;
+- (NSData*)PNGRepresentation;
 @end

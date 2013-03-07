@@ -11,7 +11,7 @@
 		6B6234F816BBA17E0003C92F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6234F716BBA17E0003C92F /* main.m */; };
 		6B6234FC16BBA17E0003C92F /* IconFactoryCLI.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B6234FB16BBA17E0003C92F /* IconFactoryCLI.1 */; };
 		6B62351816BBA2510003C92F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B62351616BBA2450003C92F /* Cocoa.framework */; };
-		6B62352416BBA4100003C92F /* NSImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62352316BBA4100003C92F /* NSImage+Resize.m */; };
+		6B62352416BBA4100003C92F /* NSImage+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62352316BBA4100003C92F /* NSImage+Ext.m */; };
 		6B62352716BBB2630003C92F /* IcnsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B62352616BBB2630003C92F /* IcnsFactory.m */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +35,8 @@
 		6B6234FA16BBA17E0003C92F /* IconFactoryCLI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IconFactoryCLI-Prefix.pch"; sourceTree = "<group>"; };
 		6B6234FB16BBA17E0003C92F /* IconFactoryCLI.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = IconFactoryCLI.1; sourceTree = "<group>"; };
 		6B62351616BBA2450003C92F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		6B62352216BBA4100003C92F /* NSImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Resize.h"; sourceTree = "<group>"; };
-		6B62352316BBA4100003C92F /* NSImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Resize.m"; sourceTree = "<group>"; };
+		6B62352216BBA4100003C92F /* NSImage+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Ext.h"; sourceTree = "<group>"; };
+		6B62352316BBA4100003C92F /* NSImage+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Ext.m"; sourceTree = "<group>"; };
 		6B62352516BBB2630003C92F /* IcnsFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcnsFactory.h; sourceTree = "<group>"; };
 		6B62352616BBB2630003C92F /* IcnsFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IcnsFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,8 +86,8 @@
 				6B6234F716BBA17E0003C92F /* main.m */,
 				6B62352516BBB2630003C92F /* IcnsFactory.h */,
 				6B62352616BBB2630003C92F /* IcnsFactory.m */,
-				6B62352216BBA4100003C92F /* NSImage+Resize.h */,
-				6B62352316BBA4100003C92F /* NSImage+Resize.m */,
+				6B62352216BBA4100003C92F /* NSImage+Ext.h */,
+				6B62352316BBA4100003C92F /* NSImage+Ext.m */,
 				6B6234FB16BBA17E0003C92F /* IconFactoryCLI.1 */,
 				6B6234F916BBA17E0003C92F /* Supporting Files */,
 			);
@@ -154,7 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B6234F816BBA17E0003C92F /* main.m in Sources */,
-				6B62352416BBA4100003C92F /* NSImage+Resize.m in Sources */,
+				6B62352416BBA4100003C92F /* NSImage+Ext.m in Sources */,
 				6B62352716BBB2630003C92F /* IcnsFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +250,7 @@
 				6B62350116BBA17E0003C92F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

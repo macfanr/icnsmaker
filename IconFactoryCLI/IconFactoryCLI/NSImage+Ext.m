@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Xu Jun. All rights reserved.
 //
 
-#import "NSImage+Resize.h"
+#import "NSImage+Ext.h"
 
 @implementation NSImage (Resize)
 
@@ -22,6 +22,13 @@
     [newImage unlockFocus];
     
     return newImage;
+}
+
+- (NSData*)PNGRepresentation
+{
+    NSBitmapImageRep *bitmap = [[[NSBitmapImageRep alloc] initWithData:[self TIFFRepresentation]] autorelease];
+    
+    return [bitmap representationUsingType:NSPNGFileType properties:nil];
 }
 
 @end
